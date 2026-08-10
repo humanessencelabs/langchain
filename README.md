@@ -78,3 +78,30 @@ LangChain helps developers build applications powered by LLMs through a standard
 - [LangChain Academy](https://academy.langchain.com/) — comprehensive, free courses on LangChain libraries and products, made by the LangChain team
 - [Contributing Guide](https://docs.langchain.com/oss/python/contributing/overview) — how to contribute and find good first issues
 - [Code of Conduct](https://github.com/langchain-ai/langchain/?tab=coc-ov-file) — community guidelines and standards
+
+---
+
+## ⬡ Essence Pulse (experimental prototype)
+
+> «Intelligence may be distributed. Authority remains with the human.»
+
+**Essence Pulse** is an independent experimental prototype of a **permission-controlled AI interoperability layer** — a personal intelligence layer that understands events across apps, devices, and services without giving any single AI unrestricted access to your digital life.
+
+It is located at [`libs/partners/essence-pulse/`](libs/partners/essence-pulse/) and uses LangChain's model-provider abstractions as its AI backbone.
+
+```bash
+cd libs/partners/essence-pulse
+pip install -e ".[dev]"
+python demo/run_demo.py        # interactive demo, no API key required
+python demo/run_demo.py --auto-approve  # non-interactive
+```
+
+**Relevant documents:**
+- [Essence Pulse README](libs/partners/essence-pulse/README.md) — quick start and overview
+- [ARCHITECTURE.md](ARCHITECTURE.md) — full pipeline diagram and component descriptions
+- [SECURITY.md](SECURITY.md) — threat model and security principles
+- [PRIVACY.md](PRIVACY.md) — data minimization and user rights
+- [ROADMAP.md](ROADMAP.md) — phased milestones
+- [docs/WHAT_COMES_AFTER_APPS.md](docs/WHAT_COMES_AFTER_APPS.md) — technical article on agent-native computing
+
+*Essence Pulse is not affiliated with, endorsed by, or associated with Nothing Technology Limited or any other company.*
