@@ -6,6 +6,7 @@ It never connects to any real app, service, or device.
 
 from __future__ import annotations
 
+import dataclasses
 from datetime import datetime, timezone
 from typing import Callable
 
@@ -93,8 +94,6 @@ class DemoConnector:
         event = scenario_map.get(self._scenario, DEMO_SCENARIOS[0]["event"])
 
         # Stamp a fresh timestamp so every run looks current
-        import dataclasses
-
         event = dataclasses.replace(event, timestamp=datetime.now(timezone.utc))
         publish(event)
         return event

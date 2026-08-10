@@ -9,6 +9,7 @@ proposed action and waits for a response.
 
 from __future__ import annotations
 
+import uuid
 from dataclasses import dataclass
 from enum import Enum
 from typing import Any
@@ -62,9 +63,6 @@ class ApprovalManager:
         self._auto_approve = auto_approve
         self._pending: list[ApprovalRequest] = []
         self._history: list[ApprovalRequest] = []
-        import uuid
-
-        self._uuid = uuid.uuid4
 
     def request_approval(
         self,
@@ -84,7 +82,7 @@ class ApprovalManager:
             The :class:`ApprovalOutcome` (approved or rejected).
         """
         req = ApprovalRequest(
-            request_id=str(self._uuid()),
+            request_id=str(uuid.uuid4()),
             agent_id=result.agent_id,
             action=result.action,
             description=result.reasoning,

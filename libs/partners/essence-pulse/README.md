@@ -80,7 +80,9 @@ No API key required. All data is synthetic.
 git clone https://github.com/humanessencelabs/langchain
 cd langchain/libs/partners/essence-pulse
 
-pip install -e ".[dev]"
+# Install with dev dependencies (using uv, the project's package manager)
+uv sync --all-groups
+# or with pip: pip install -e ".[dev]"
 
 # Run the interactive demo
 python demo/run_demo.py

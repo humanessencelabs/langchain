@@ -19,8 +19,9 @@ Thank you for your interest in contributing to Essence Pulse — an independent 
 git clone https://github.com/humanessencelabs/langchain
 cd langchain/libs/partners/essence-pulse
 
-# Install with dev dependencies
-pip install -e ".[dev]"
+# Install with dev dependencies (using uv, the project's package manager)
+uv sync --all-groups
+# or with pip: pip install -e ".[dev]"
 
 # Run tests
 pytest tests/

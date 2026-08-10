@@ -61,8 +61,10 @@ class SchedulerAgent(BaseAgent):
         # Try schedule parsing first, fall back to reply parsing
         suggestion = self._parse_suggestion(response)
         if not suggestion.get("suggested_reply"):
+            fallback_instruction = "Suggest a short, friendly reply to the message."
+            fallback_prompt = self._safe_prompt(fallback_instruction, raw_content)
             suggestion["suggested_reply"] = self._model.complete(
-                f"Suggest a short friendly reply to: {raw_content}",
+                fallback_prompt,
                 context=context,
             )
 

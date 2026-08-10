@@ -79,6 +79,6 @@ If you discover a security vulnerability:
 
 ## Dependency security
 
-- Pinned dependencies in `pyproject.toml`.
+- Dependencies declared in `pyproject.toml` with minimum version constraints (`rich>=13.0`, `openai>=1.0`).
 - Only two runtime dependencies: `rich` (display) and optionally `openai`.
 - No network calls in the default (stub) configuration.
